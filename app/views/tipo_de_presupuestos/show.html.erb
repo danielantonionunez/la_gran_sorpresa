@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @tipo_de_presupuesto.nombre %>
+</p>
+<%= link_to :Editar, edit_tipo_de_presupuesto_path(@tipo_de_presupuesto), :class => :menuLink1N %> |
+<%= link_to :Regresar, tipo_de_presupuestos_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nuevo tipo de presupuesto', new_tipo_de_presupuesto_path, :class => :menuLink1N %>

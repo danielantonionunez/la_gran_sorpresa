@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item: 
+  precio: 1.5
+  presupuesto_mensual: 
+
+two:
+  item: 
+  precio: 1.5
+  presupuesto_mensual: 

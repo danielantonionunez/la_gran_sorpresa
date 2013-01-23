@@ -1,0 +1,22 @@
+<table class="grid">
+  <tr Class="gridheader">
+    <th>Nombre</th>
+    <th>Tipo de forma de pago</th>
+    <th>Financiador</th>
+    <th>Moneda</th>
+    <th colspan=3></th>
+  </tr>
+<% x=0; @forma_de_pago_al_contados.each do |forma_de_pago_al_contado| ; c = ((x+=1)%2)==0 ? :gridrow : :gridalternatingrow %>
+  <tr class=<%=c%>>
+    <td><%= forma_de_pago_al_contado.nombre %></td>
+    <td><%= forma_de_pago_al_contado.tipo_de_forma_de_pago.nombre %></td>
+    <td><%= forma_de_pago_al_contado.financiador.nombre %></td>
+    <td><%= forma_de_pago_al_contado.moneda.nombre %></td>
+    <td><%= link_to :Detalles, forma_de_pago_al_contado, :class => :menuLink1N %></td>
+    <td><%= link_to :Editar, edit_forma_de_pago_al_contado_path(forma_de_pago_al_contado), :class => :menuLink1N %></td>
+    <td><%= link_to :Eliminar, forma_de_pago_al_contado, confirm: "\u00bfEsta seguro?", method: :delete, :class => :menuLink1N %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Crear nueva forma de pago al contado', new_forma_de_pago_al_contado_path, :class => :menuLink1N %>

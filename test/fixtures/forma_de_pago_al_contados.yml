@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  tipo_de_forma_de_pago: 
+  financiador: 
+  moneda: 
+
+two:
+  nombre: MyString
+  tipo_de_forma_de_pago: 
+  financiador: 
+  moneda: 

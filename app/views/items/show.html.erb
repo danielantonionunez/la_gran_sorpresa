@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @item.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Forma de pago al contado:</b>
+  <%= @item.forma_de_pago_al_contados.collect(&:nombre).join", " %>
+</p>
+<p class="menuNormal1N">
+  <b>Forma de pago al credito:</b>
+  <%= @item.forma_de_pago_al_creditos.collect(&:nombre).join", " %>
+</p>
+<%= link_to :Editar, edit_item_path(@item), :class => :menuLink1N %> |
+<%= link_to :Regresar, items_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nuevo item', new_item_path, :class => :menuLink1N %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Tipo de presupuesto:</b>
+  <%= @presupuesto_mensual.tipo_de_presupuesto.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Periodo:</b>
+  <%=l @presupuesto_mensual.periodo, :format => :short %>
+</p>
+<p class="menuNormal1N">
+  <b>Moneda:</b>
+  <%= @presupuesto_mensual.moneda.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Saldo:</b>
+  <%= (@presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f - @presupuesto_mensual.egreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f).round 2 %>
+</p>
+<table class="grid"><tr><td style="vertical-align:top;">
+<%= render 'ingreso_presupuesto_mensuals/ingreso_presupuesto_mensual' %>
+<%= render 'ingreso_presupuesto_mensuals/form' %>
+</td><td style="vertical-align:top;">
+<%= render 'egreso_presupuesto_mensuals/egreso_presupuesto_mensual' %>
+<%= render 'egreso_presupuesto_mensuals/form' %>
+</tr></td></table>
+<%= link_to :Editar, edit_presupuesto_mensual_path(@presupuesto_mensual), :class => :menuLink1N %> |
+<%= link_to :Regresar, presupuesto_mensuals_path, :class => :menuLink1N %> |
+<%= link_to "Crear nuevo presupuesto mensual", new_presupuesto_mensual_path, :class => :menuLink1N %>

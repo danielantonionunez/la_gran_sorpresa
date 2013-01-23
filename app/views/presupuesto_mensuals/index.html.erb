@@ -1,0 +1,21 @@
+<table class="grid">
+  <tr Class="gridheader">
+    <th>Tipo de presupuesto</th>
+    <th>Periodo</th>
+    <th>Moneda</th>
+    <th colspan=4></th>
+  </tr>
+<% x=0; @presupuesto_mensuals.each do |presupuesto_mensual| ; c = ((x+=1)%2)==0 ? :gridrow : :gridalternatingrow %>
+  <tr class=<%=c%>>
+    <td><%= presupuesto_mensual.tipo_de_presupuesto.nombre %></td>
+    <td><%= l presupuesto_mensual.periodo, :format => :short %></td>
+    <td><%= presupuesto_mensual.moneda.nombre %></td>
+    <td><%= link_to :Ejecucion, ejecucion_presupuesto_mensual_path(presupuesto_mensual), :class => :menuLink1N %></td>
+    <td><%= link_to :Detalles, presupuesto_mensual, :class => :menuLink1N %></td>
+    <td><%= link_to :Editar, edit_presupuesto_mensual_path(presupuesto_mensual), :class => :menuLink1N %></td>
+    <td><%= link_to :Eliminar, presupuesto_mensual, confirm: "\u00bfEsta seguro?", method: :delete, :class => :menuLink1N %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Crear nuevo presupuesto mensual', new_presupuesto_mensual_path, :class => :menuLink1N %>

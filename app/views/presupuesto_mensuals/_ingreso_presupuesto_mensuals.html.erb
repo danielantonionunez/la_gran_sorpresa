@@ -1,0 +1,37 @@
+<table class="grid">
+  <tr Class="gridheader">
+    <th colspan=3>Ejecucion Ingresos</th>
+  </tr>
+  <tr Class="gridheader">
+    <th rowspan=2>Item</th>
+    <th colspan=2>Ejecucion</th>
+  </tr>
+  <tr Class="gridheader">
+    <th>Montos reales de este item</th>
+    <th>Ejecutar pago</th>
+  </tr>
+<% x=0; @presupuesto_mensual.ingreso_presupuesto_mensuals.each do |ingreso_presupuesto_mensual| ; c = ((x+=1)%2)==0 ? :gridrow : :gridalternatingrow %>
+  <tr class=<%=c%>>
+    <td>
+      <p class="menuNormal1N">
+        <b>Nombre:</b></br>
+        <%= ingreso_presupuesto_mensual.item.nombre %>
+      </p>
+      <p class="menuNormal1N">
+        <b>Presupuestado:</b></br>
+        <%= @presupuesto_mensual.moneda.simbolo %><%= ingreso_presupuesto_mensual.precio %>
+      </p>
+	  <p class="menuNormal1N">
+        <b>Diferencia:</b></br>
+        <%= @presupuesto_mensual.moneda.simbolo %><%= (ingreso_presupuesto_mensual.ejecucion_ingresos.collect(&:precio).reduce(:+).to_f - ingreso_presupuesto_mensual.precio.to_f).round 2 %>
+      </p>
+    </td>
+    <td>
+      <%= render :partial => 'ejecucion_ingresos/ejecucion_ingresos', :locals => {:ingreso_presupuesto_mensual => ingreso_presupuesto_mensual} %>
+    </td>
+    <td>        
+      <%= render :partial => 'ejecucion_ingresos/form', :locals => {:ingreso_presupuesto_mensual => ingreso_presupuesto_mensual} %>  
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,28 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2>No se puede grabar porque no ha pasado la validacion <%= pluralize(@item.errors.count, "dato") %>:</h2>
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre, :class => :menuNormal1N %><br />
+    <%= f.text_field :nombre, :class => :NormalCajaTexto %>
+  </div>
+  <div class="field">
+    <%= f.label :forma_de_pago_al_contado_ids, :class => :menuNormal1N %><br />
+    <%= f.collection_select(:forma_de_pago_al_contado_ids, @forma_de_pago_al_contado, :id, :nombre, {:selected => @item.forma_de_pago_al_contado_ids},{:include_blank => "seleccione valor", :multiple => true, :class => :NormalSelect})%>   
+  </div>
+  <div class="field">
+    <%= f.label :forma_de_pago_al_credito_ids, :class => :menuNormal1N %><br />
+    <%= f.collection_select(:forma_de_pago_al_credito_ids, @forma_de_pago_al_credito, :id, :nombre, {:selected => @item.forma_de_pago_al_credito_ids},{:include_blank => "seleccione valor", :multiple => true, :class => :NormalSelect})%>   
+  </div>
+  <div class="actions">
+    <%= f.submit :class => :NormalBoton %>
+  </div>
+<% end %>

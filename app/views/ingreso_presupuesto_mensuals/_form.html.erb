@@ -1,0 +1,16 @@
+  <p class="menuNormal1N">
+    <b>Registrar ingresos:</b>
+  </p>
+<%= form_for([@presupuesto_mensual, @presupuesto_mensual.ingreso_presupuesto_mensuals.build]) do |f| %>
+  <div class="field">
+    <%= f.label :item_id, :class => :menuNormal1N %><br />
+    <%= f.collection_select :item_id,@items,:id,:nombre, {:include_blank => "Seleccione valor"}, {:class => :NormalSelect} %>
+  </div>
+  <div class="field">
+    <%= f.label :precio, :class => :menuNormal1N %><br />
+    <%= f.text_field :precio, :class => :NormalCajaTexto %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => :NormalBoton %>
+  </div>
+<% end %>

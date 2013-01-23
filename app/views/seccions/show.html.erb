@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @seccion.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Empresa:</b>
+  <%= @seccion.empresa.nombre %>
+</p>
+<%= link_to :Editar, edit_seccion_path(@seccion), :class => :menuLink1N %> |
+<%= link_to :Regresar, seccions_path, :class => :menuLink1N %> |
+<%= link_to "Crear nueva secci\u00f3n", new_seccion_path, :class => :menuLink1N %>

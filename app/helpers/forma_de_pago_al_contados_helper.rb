@@ -1,0 +1,2 @@
+module FormaDePagoAlContadosHelper
+end

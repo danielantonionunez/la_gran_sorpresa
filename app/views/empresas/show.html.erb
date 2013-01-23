@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @empresa.nombre %>
+</p>
+<%= link_to :Editar, edit_empresa_path(@empresa), :class => :menuLink1N %> |
+<%= link_to :Regresar, empresas_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nueva empresa', new_empresa_path, :class => :menuLink1N %>

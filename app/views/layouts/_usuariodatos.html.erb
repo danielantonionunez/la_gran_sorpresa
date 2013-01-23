@@ -1,0 +1,11 @@
+<tr><td colspan="2" class="principal">
+    <span ID="LblTitulo" Class="TituloFondo"><%="Rol #{@user.rols.collect(&:nombre).join", "}" %></span>
+</tr></td>
+<tr><td colspan="2" align="right">
+  <img alt="icono" src="/assets/AureolaSubMenu.png" style="vertical-align: middle" />
+  <span ID="LblUsuario" Class="datosUsuario"><%=@user.nombreusuario%></span>
+  <img alt="Icono" src="/assets/AureolaSubMenu.png" style="vertical-align: middle" />
+  <span ID="LblNombresUsuario" Class="datosUsuario"><%= link_to @user.nombre_completo, inicio_path, :class => :menuLink2 %></span>
+  <img alt="Icono" src="/assets/AureolaSubMenu.png" style="vertical-align: middle" />
+<%= (link_to (t :ExitLog), sesion_path, :class => :salir) if !@user.nil?  %>					
+</tr></td>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  precio: 1.5
+  forma_de_pago_al_contado: 
+  forma_de_pago_al_credito: 
+  ingreso_presupuesto_mensual: 
+
+two:
+  precio: 1.5
+  forma_de_pago_al_contado: 
+  forma_de_pago_al_credito: 
+  ingreso_presupuesto_mensual: 

@@ -1,0 +1,33 @@
+<table class="grid">
+  <tr Class="gridheader">
+    <th>Forma de pago</th>
+    <th>Contado?</th>
+    <th>Tipo</th>
+    <th>Financiador</th>
+    <th>Monto</th>
+    <th></th>
+  </tr>
+<% x=0; ingreso_presupuesto_mensual.ejecucion_ingresos.each do |ejecucion_ingreso| ; c = ((x+=1)%2)==0 ? :gridrow : :gridalternatingrow %>
+  <tr class=<%=c%>>
+<%  if ejecucion_ingreso.forma_de_pago_al_contado.present? %>  
+    <td><%= ejecucion_ingreso.forma_de_pago_al_contado.nombre %></td>
+    <td><%= t ejecucion_ingreso.forma_de_pago_al_contado.present?.to_s %></td>
+    <td><%= ejecucion_ingreso.forma_de_pago_al_contado.tipo_de_forma_de_pago.nombre %></td>
+    <td><%= ejecucion_ingreso.forma_de_pago_al_contado.financiador.nombre %></td>
+<%  elsif ejecucion_ingreso.forma_de_pago_al_credito.present? %>
+    <td><%= ejecucion_ingreso.forma_de_pago_al_credito.nombre %></td>
+    <td><%= t ejecucion_ingreso.forma_de_pago_al_contado.present?.to_s %></td>
+    <td><%= ejecucion_ingreso.forma_de_pago_al_credito.tipo_de_forma_de_pago.nombre %></td>
+    <td><%= ejecucion_ingreso.forma_de_pago_al_credito.financiador.nombre %></td>
+<% end %>
+    <td><%= ejecucion_ingreso.precio %></td>
+    <td><%= link_to :Eliminar, [@presupuesto_mensual, ingreso_presupuesto_mensual, ejecucion_ingreso], confirm: "\u00bfEsta seguro?", method: :delete, :class => :menuLink1N %></td>
+  </tr>
+<% end %>
+  <tr Class="gridheader">
+    <th colspan=3></th>
+    <th>Total:</th>
+    <th><%= ingreso_presupuesto_mensual.ejecucion_ingresos.collect(&:precio).reduce(:+).to_f.round 2 %></th>
+    <th></th>
+  </tr>
+</table>

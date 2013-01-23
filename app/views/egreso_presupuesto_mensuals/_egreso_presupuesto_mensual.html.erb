@@ -1,0 +1,22 @@
+<p class="menuNormal1N">
+  <b>Egresos:</b>
+</p>
+<table class="grid">
+  <tr Class="gridheader">
+    <th>Item</th>
+    <th>Precio</th>
+    <th></th>
+  </tr>
+<% x=0; @presupuesto_mensual.egreso_presupuesto_mensuals.each do |egreso_presupuesto_mensual| ; c = ((x+=1)%2)==0 ? :gridrow : :gridalternatingrow %>
+  <tr class=<%=c%>>
+    <td><%= egreso_presupuesto_mensual.item.nombre %></td>
+    <td><%= egreso_presupuesto_mensual.precio %></td>
+    <td><%= link_to :Eliminar, [@presupuesto_mensual, egreso_presupuesto_mensual], confirm: "\u00bfEsta seguro?", method: :delete, :class => :menuLink1N %></td>
+  </tr>
+<% end %>
+  <tr Class="gridheader">
+    <th>Total:</th>
+    <th><%= @presupuesto_mensual.egreso_presupuesto_mensuals.collect(&:precio).reduce(:+).round 2 %></th>
+    <th></th>
+  </tr>
+</table>

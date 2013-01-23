@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @moneda.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Simbolo:</b>
+  <%= @moneda.simbolo %>
+</p>
+<%= link_to :Editar, edit_moneda_path(@moneda), :class => :menuLink1N %> |
+<%= link_to :Regresar, monedas_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nueva moneda', new_moneda_path, :class => :menuLink1N %>

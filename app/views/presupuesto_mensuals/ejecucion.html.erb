@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Tipo de presupuesto:</b>
+  <%= @presupuesto_mensual.tipo_de_presupuesto.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Periodo:</b>
+  <%=l @presupuesto_mensual.periodo, :format => :short %>
+</p>
+<p class="menuNormal1N">
+  <b>Moneda:</b>
+  <%= @presupuesto_mensual.moneda.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Presupuestado ingresos:</b>
+  <%= @presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f.round 2%>
+  <b>Ejecutado ingresos:</b>
+  <%= EjecucionIngreso.includes(:ingreso_presupuesto_mensual).where(:ingreso_presupuesto_mensuals => {:presupuesto_mensual_id => @presupuesto_mensual}).collect(&:precio).reduce(:+).to_f.round 2 %>
+</p>
+<p class="menuNormal1N">
+  <b>Presupuestado egresos:</b>
+  <%= @presupuesto_mensual.egreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f.round 2 %>
+  <b>Ejecutado egresos:</b>
+  <%= EjecucionEgreso.includes(:egreso_presupuesto_mensual).where(:egreso_presupuesto_mensuals => {:presupuesto_mensual_id => @presupuesto_mensual}).collect(&:precio).reduce(:+).to_f.round 2 %>
+</p>
+<p class="menuNormal1N">
+  <b>Presupuestado Saldo:</b>
+  <%= (@presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f - @presupuesto_mensual.egreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f).round 2 %>
+  <b>Ejecutado Saldo:</b>
+  <%= (EjecucionIngreso.includes(:ingreso_presupuesto_mensual).where(:ingreso_presupuesto_mensuals => {:presupuesto_mensual_id => @presupuesto_mensual}).collect(&:precio).reduce(:+).to_f - EjecucionEgreso.includes(:egreso_presupuesto_mensual).where(:egreso_presupuesto_mensuals => {:presupuesto_mensual_id => @presupuesto_mensual}).collect(&:precio).reduce(:+).to_f).round 2 %>
+</p>
+<p class="menuNormal1N">
+  <b>Ingresos:</b>
+</p>
+<%= render 'ingreso_presupuesto_mensuals' %>
+<p class="menuNormal1N">
+  <b>Egresos:</b>
+</p>
+<%= render 'egreso_presupuesto_mensuals' %>
+<%= link_to :Regresar, presupuesto_mensuals_path, :class => :menuLink1N %> |
+<%= link_to "Crear nuevo presupuesto mensual", new_presupuesto_mensual_path, :class => :menuLink1N %>

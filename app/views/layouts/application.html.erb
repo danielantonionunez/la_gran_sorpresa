@@ -1,0 +1,34 @@
+<!DOCTYPE html><html><head><title>
+<%="#{@empresita.nombre} - " if !@empresita.nil? %><%=t :SystemAngelusDragon%></title>
+<%= stylesheet_link_tag    "application" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+<link rel="icon" type="image/png" href="/assets/bitdragonsaas16x16.png" />
+</head><body class="principal"><table class="principal">
+<% if !@user.nil? %>
+<%= render 'layouts/usuariodatos' %>
+<% end %>
+<tr><td class=<%= @user.nil? ? :nada : :menu %> >
+  <table class=<%= @user.nil? ? :nada : :menuT %> >
+<% if @MenuConRolesUsuario%>
+<%= render 'layouts/menu' %>
+<% end %>
+  </table></td><td valign="top">
+<% if @actual
+@cabeceratitulo=@titulo.capitalize; @cabeceradescripcion=@descripcion.capitalize %>
+<%= render 'layouts/cabecera' %>
+      <%= yield %>
+<% elsif params["controller"]=="inicio"
+@cabeceratitulo="Pagina de Inicio"; @cabeceradescripcion="Hola #{@user.nombre}, puedes hacer clic en cualquiera de las opciones del menu ubicado al lado izquierdo de la ventana" %>
+<%= render 'layouts/cabecera' %>   
+      <%= yield %>
+<% elsif params["controller"]=="seguridad" && @user.nil?%>
+     <%= yield %>
+<% elsif !@actual && params["controller"]=="usuarios" && params["action"]=="show" && params["id"]==@user.id.to_s
+@cabeceratitulo="Su clave ha sido actualizada"; @cabeceradescripcion="Haga clic en cualquiera de las opciones del menu ubicado al lado izquierdo de la ventana, son las unicas opciones disponibles en su sesion" %>
+<%= render 'layouts/cabecera' %>
+  <% else
+@cabeceratitulo="Pagina incorrecta"; @cabeceradescripcion="Haga clic en cualquiera de las opciones del menu ubicado al lado izquierdo de la ventana, son las unicas opciones disponibles en su sesion, si no hay menú pruebe ingresando nuevamente al sistema" %>
+<%= render 'layouts/cabecera' %>
+<% end %>
+</tr></td></table></body></html>

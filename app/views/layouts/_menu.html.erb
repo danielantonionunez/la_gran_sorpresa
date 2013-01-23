@@ -1,0 +1,28 @@
+<%  @secciones.each do |seccion| %>
+    <tr><td>
+      <table class="menuT">
+        <tr>
+          <td class="menuP"></td>
+          <td class="menu2"><span class="menuNegrito"><%= seccion.nombre %></span></td>
+        </tr>
+      </table>
+    </tr></td>
+<%  seccion.elementos.includes(:rols).where(:rols => {:id => @user.rols}).each do |elemento| %>                    
+    <tr><td>
+      <table class="menuT">
+<%    actual=!((ruta elemento.controlador) == inicio_path) && elemento.controlador==params["controller"]
+      actual ? (menu1,menu2,@actual,@titulo,@descripcion = ordenador actual, params["action"], elemento.nombre) : (menu1,menu2 = ordenador actual, params["action"], elemento.nombre) %>
+        <tr>
+          <td class="<%=menu1%>"></td>
+          <td class="<%=menu2%>">
+<%         if actual%>
+            <span class="menuSeleccionado"><%=elemento.nombre%></span>
+<%         else %>
+<%=         link_to elemento.nombre, (ruta elemento.controlador), :class => :menuLink1N%>
+<%         end %>
+          </td>
+        </tr>
+      </table>
+    </tr></td>
+<%    end %>			
+<%  end %>

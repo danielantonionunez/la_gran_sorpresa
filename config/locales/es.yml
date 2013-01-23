@@ -1,0 +1,85 @@
+﻿es:
+  Listing: "Listando"
+  "true": "si"
+  "false": "no"
+  AngelusDragon: "SAAS Gama BitDragon"
+  SystemAngelusDragon: "Sistemas Angelus Dragon gama BitDragon SAAS"
+  UserLog: "Sesión"
+  ExitLog: "Clic aquí para salir"
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
+  date:
+    formats:
+      default: "%d / %m / %Y"
+      short: "%B del %Y"
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+  activerecord:
+    models:
+      elemento: "elemento"
+      usuario: "usuario"
+      empresa: "empresa"
+      rol: "rol"
+      seccion: "sección"
+    attributes:
+      elemento:
+        nombre: "Nombre del elemento"
+        controlador: "Ruta del controlador"
+        seccion_id: "Sección a la que pertene el elemento"
+        rol: "Roles que tendrán acceso"
+      usuario:
+        nombreusuario: "Nombre de usuario"
+        nombre: "Nombres"
+        apellidopaterno: "Apellidos paternos"
+        apellidomaterno: "Apellidos maternos"
+        rol: "Roles que desempeña el usuario"
+      empresa:
+        nombre: "Nombre de la empresa"
+      rol:
+        nombre: "Nombre que identifica un rol"
+      seccion:
+        nombre: "Nombre de la sección"
+        empresa_id: "Empresa a la que pertenece la sección"
+    errors:
+      models:
+        elemento:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+            controlador:
+              blank: "no puede estar en blanco."
+            seccion_id:
+              blank: "debe tener seleccionado un valor."
+        usuario:
+          attributes:
+            nombreusuario:
+              taken: "ya existe, escriba otro."
+              blank: "no puede estar en blanco."
+            clave:
+              blank: "no puede estar en blanco." 
+            nombre:
+              blank: "no puede estar en blanco."
+            apellidopaterno:
+              blank: "no puede estar en blanco."
+            apellidomaterno:
+              blank: "no puede estar en blanco."
+            empresa_id:
+              blank: "debe tener seleccionado un valor."
+        empresa:
+          attributes:
+            nombre:
+              taken: "ya existe, escriba otro."
+              blank: "no puede estar en blanco."
+        rol:
+          attributes:
+            nombre:
+              taken: "ya existe, escriba otro."
+              blank: "no puede estar en blanco."
+        seccion:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+              taken: "ya existe en la empresa seleccionada, escriba otro."
+            empresa_id:
+              blank: "debe tener seleccionado un valor."

@@ -1,0 +1,19 @@
+<%= form_for(@tipo_de_presupuesto) do |f| %>
+  <% if @tipo_de_presupuesto.errors.any? %>
+    <div id="error_explanation">
+      <h2>No se puede grabar porque no ha pasado la validacion <%= pluralize(@tipo_de_presupuesto.errors.count, "dato") %>:</h2>
+      <ul>
+      <% @tipo_de_presupuesto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :nombre, :class => :menuNormal1N %><br />
+    <%= f.text_field :nombre, :class => :NormalCajaTexto %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => :NormalBoton %>
+  </div>
+<% end %>

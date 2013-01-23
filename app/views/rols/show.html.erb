@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @rol.nombre %>
+</p>
+<%= link_to :Editar, edit_rol_path(@rol), :class => :menuLink1N %> |
+<%= link_to :Regresar, rols_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nuevo rol', new_rol_path, :class => :menuLink1N %>

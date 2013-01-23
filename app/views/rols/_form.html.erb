@@ -1,0 +1,19 @@
+<%= form_for(@rol) do |f| %>
+  <% if @rol.errors.any? %>
+    <div id="error_explanation">
+      <h2>No se puede grabar porque no ha pasado la validacion <%= pluralize(@rol.errors.count, "dato") %>:</h2>
+      <ul>
+      <% @rol.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :nombre, :class => :menuNormal1N %><br />
+    <%= f.text_field :nombre, :class => :NormalCajaTexto %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => :NormalBoton %>
+  </div>
+<% end %>

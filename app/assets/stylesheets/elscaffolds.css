@@ -1,0 +1,298 @@
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #87DECD;
+  display: inline-block;
+}
+
+#error_explanation {
+  width: 100%;
+  border: 2px solid yellow;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #87DECD;
+  color: #050;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  font-family: Arial;
+  padding: 5px 5px 5px 15px;
+  font-size: 11px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #37C8AB;
+  color: White;
+}
+
+#error_explanation ul li {
+  font-family: Arial; font-size: 8pt; color: #005500; list-style:square;
+}
+
+body.principal {
+margin: 0px;
+}
+td.principal{
+    background-position:right; 
+    background-image: url(/assets/BitDragonSaaSPortadaLetras2.png);
+    background-repeat: no-repeat; height: 44px; background-color: #5599ff;
+}
+td.menu{
+    vertical-align:top;
+    width: 190px;
+    }  
+td.menuP
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; width: 10px; border-bottom: #ffffff 1px solid; 
+    text-align: left; background-color: #37c8ab;
+}
+td.menuSeleccionado
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; width: 10px; border-bottom: #ffffff 1px solid; 
+    text-align: left; background-color: White;
+}
+td.menu2
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; border-bottom: #ffffff 1px solid; text-align: left;
+    background-color: #37c8ab;
+}
+td.menu2Seleccionado
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; border-bottom: #ffffff 1px solid; text-align: left;
+    background-color: White;
+}
+td.menu1N
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; width: 18px; border-bottom: #ffffff 1px solid; 
+    text-align: right; background-color: #87decd; vertical-align:top;
+}
+td.menu1N2
+{
+    padding-right: 0px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px; border-bottom: #ffffff 1px solid; text-align: left;
+    background-color: #87decd;
+}
+td.menu1NSeleccionado
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; width: 18px; border-bottom: #ffffff 1px solid; 
+    text-align: right; background-color: #ffff00;
+}
+td.menu1N2Seleccionado
+{
+    padding-right: 0px; padding-left: 3px; padding-bottom: 3px; padding-top: 3px; border-bottom: #ffffff 1px solid; text-align: left;
+    background-color: #ffff00;
+}
+td.menu2N
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; width: 26px; border-bottom: #ffffff 1px solid; 
+    text-align: left; background-color: #ffefe5;
+}
+td.menu2N2
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; border-bottom: #ffffff 1px solid; text-align: left;
+    background-color: #ffefe5;
+}
+td.menu2NSeleccionado
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; width: 26px; border-bottom: #ffffff 1px solid; 
+    text-align: left; background-color: White;
+}
+td.menu2N2Seleccionado
+{
+    padding-right: 0px; padding-left: 1px; padding-bottom: 3px; padding-top: 3px; border-bottom: #ffffff 1px solid; text-align: left;
+    background-color: White;
+}
+td.gridrow {          
+     background: white;
+}
+td.gridalternatingrow {          
+     background : #DDDDDD;
+}
+table.menuT
+{
+    width: 166px;
+    border-collapse:collapse;
+    border: 0; border-spacing: 0;
+}
+table.menuT td{
+    padding: 0;
+}
+table.grid {     
+    font-family: Arial; color: #005500; font-size: 8pt; text-align: left;
+}
+table.nada{
+    border: 0; border-spacing: 0;
+}
+table.nada td{
+    padding: 0;
+}
+table.principal
+{ 
+    border: 0; border-spacing: 0; width: 100%;
+}
+table.principal td
+{ 
+    padding: 0;
+}
+table.principal2
+{ 
+    border: 0; border-spacing: 0; width: 100%;
+}
+table.principal2 td
+{ 
+    padding: 0; width: 100%;
+}
+th.menu{
+    background-color: #6b0100;
+    width: 100%;
+    text-align: left;
+    }
+th.gridheader {
+     font-weight: bold;background : #005500;color: White;
+}
+tr.gridrow {          
+     background: white;
+}
+tr.gridalternatingrow {          
+     background : #aaffee;
+}
+tr.gridheader {
+     background : #5fd3bc;color: White;
+}
+hr.Linea2 {
+    /*MARGIN-TOP: 0px; COLOR: #37C8AB; HEIGHT: 1px*/
+    color: #37C8AB;
+    background-color: #005500;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+span.menuNegrito
+{
+    font-family: Arial; font-size: 8pt; color: white; font-weight: bold;
+}
+span.menuSeleccionado
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+span.menuNormal1Nalerta
+{
+    font-family: Arial; font-size: 8pt; color: Red;
+}
+span.menu{
+    color: #FFF; padding-left: 10px;
+    }
+span.datosUsuario
+{
+    font-family: Arial; font-size: 7pt; color: #005500;
+}
+span.menuNormal1N
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+span.menuTitulo
+{
+    font-family: Arial; font-size: larger; color: #005500; font-weight: bold;
+}
+span.TituloFondo
+{
+    font-family: Arial; font-size: large; color: White; background-color: #5599ff;
+}
+span.usuario{
+    color: #FFF; padding-left: 20px;
+    }
+span.NormalRadioButon
+{
+    font-family: Arial; font-size: 8pt; color: #5599ff;
+}
+span.tituloMedio
+{
+    font-family: Arial; font-size: small; color: #005500; font-weight: bold;
+}
+span.MensajeGeneral
+{
+    font-family: Arial; font-size: larger; color: Red; font-weight: bold;
+}
+input.NormalBoton
+{
+    font-family: Arial; font-size: 11px; color: White; background-color: #37c8ab
+}
+input.NormalCajaTexto
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+input.NormalCheck
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+select.NormalSelect
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+textarea.NormalCajaTexto
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+label.menuNormal1N
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+p.menuNormal1N
+{
+    font-family: Arial; font-size: 8pt; color: #005500;
+}
+a.menuLink:link
+{
+    font-family: Arial; font-size: 8pt; color: #005500; text-decoration: none; font-weight: bold;
+}
+a.menuLink:visited
+{
+    font-family: Arial; font-size: 8pt; color: #005500; text-decoration: none; font-weight: bold;
+}
+a.menuLink:hover
+{
+    font-family: Arial; font-size: 8pt; color: #005500; text-decoration: underline; font-weight: bold; background-color: transparent;
+}
+a.menuLink1N:link
+{
+    font-family: Arial; font-size: 8pt; color: #005500; text-decoration: none;
+}
+a.menuLink1N:visited
+{
+    font-family: Arial; font-size: 8pt; color: #005500; text-decoration: none;
+}
+a.menuLink1N:hover
+{
+    font-family: Arial; font-size: 8pt; color: #005500; text-decoration: underline; background-color: transparent;
+}
+a.menuLink2:link
+{
+    font-family: Arial; font-size: 7pt; color: #005500; text-decoration: none;
+}
+a.menuLink2:visited
+{
+    font-family: Arial; font-size: 7pt; color: #005500; text-decoration: none;
+}
+a.menuLink2:hover
+{
+    font-family: Arial; font-size: 7pt; color: #005500; text-decoration: underline; background-color: transparent;
+}
+a.salir:link
+{
+    font-family: Arial; font-size: 10pt; color: White; text-decoration: none; font-weight: bold; padding-left: 10px; background-color: #5599ff;
+}
+a.salir:visited
+{
+    font-family: Arial; font-size: 10pt; color: White; text-decoration: none; font-weight: bold; background-color: #5599ff;
+}
+a.salir:hover
+{
+    font-family: Arial; font-size: 10pt; color: #005500; text-decoration: underline; font-weight: bold; background-color: #ffff00;
+}

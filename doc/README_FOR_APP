@@ -1,0 +1,26 @@
+﻿= Manual general del sistema principal de la gamma BitDragonSaaS
+
+=== Aquí pueden ver los controladores, modelos, helpers y librerías de todos los sistemas de las empresas existentes.
+
+*Autor*::  Daniel Antonio Nuñez Carhuayo
+*Empresa*::  AngelusDragon
+*Sistema*::  Principal (meta sistema)
+*Gamma*::  BitDragonSaaS
+*Correo principal*::  bitdragonsaas@gmail.com
+*Telefono*::  6224854 - 6369336
+
+= Sistemas de Empresas
+
+== Demostracion del Sistema de presupuesto y control de ejecucion del presupuesto
+
+=== Objetivo
+
+- Utilizar la herramienta *Sistema* *Principal* de la gamma *_BitDragonSaaS_*
+* Mostrar al público un *sistema* *funcionando* bajo la modalidad _*SaaS*_
+* Mostrar la sencillez de su implementación en pequeños y grandes proyectos
+
+== Sistema Principal de la empresa AngelusDragon
+
+=== Objetivo
+
+El sistema principal de encarga de gestionar todas las empresas dentro de un _meta_ _sistema_ o _meta_ _framework_ las bases de datos tambien se encuentran dentro de sistema principal.

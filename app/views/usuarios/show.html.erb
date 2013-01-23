@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre de usuario:</b>
+  <%= @usuario.nombreusuario %>
+</p>
+<p class="menuNormal1N">
+  <b>Nombres:</b>
+  <%= @usuario.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Apellido paterno:</b>
+  <%= @usuario.apellidopaterno %>
+</p>
+<p class="menuNormal1N">
+  <b>Apellido materno:</b>
+  <%= @usuario.apellidomaterno %>
+</p>
+<p class="menuNormal1N">
+  <b>Activo:</b>
+  <%= t @usuario.activo.to_s %>
+</p>
+<p class="menuNormal1N">
+  <b>Empresa:</b>
+  <%= @usuario.empresa.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Rols:</b>
+  <%= @usuario.rols.collect(&:nombre).join", " %>
+</p>
+<%= link_to :Editar, edit_usuario_path(@usuario), :class => :menuLink1N %> |
+<%= link_to :Regresar, usuarios_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nuevo usuario', new_usuario_path, :class => :menuLink1N %>

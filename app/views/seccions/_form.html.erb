@@ -1,0 +1,23 @@
+<%= form_for(@seccion) do |f| %>
+  <% if @seccion.errors.any? %>
+    <div id="error_explanation">
+      <h2>No se puede grabar porque no ha pasado la validacion <%= pluralize(@seccion.errors.count, "dato") %>:</h2>
+      <ul>
+      <% @seccion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :nombre, :class => :menuNormal1N %><br />
+    <%= f.text_field :nombre, :class => :NormalCajaTexto %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa_id, :class => :menuNormal1N %><br />
+    <%= f.collection_select :empresa_id,@empresa,:id,:nombre, {:include_blank => "Seleccione valor"}, {:class => :NormalSelect} %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => :NormalBoton %>
+  </div>
+<% end %>

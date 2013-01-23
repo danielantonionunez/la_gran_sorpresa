@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombreusuario: MyString
+  clave: MyString
+  nombre: MyString
+  apellidopaterno: MyString
+  apellidomaterno: MyString
+  activo: false
+  empresa: 
+
+two:
+  nombreusuario: MyString
+  clave: MyString
+  nombre: MyString
+  apellidopaterno: MyString
+  apellidomaterno: MyString
+  activo: false
+  empresa: 

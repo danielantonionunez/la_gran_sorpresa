@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @forma_de_pago_al_credito.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Tipo de forma de pago:</b>
+  <%= @forma_de_pago_al_credito.tipo_de_forma_de_pago.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Financiador:</b>
+  <%= @forma_de_pago_al_credito.financiador.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Moneda:</b>
+  <%= @forma_de_pago_al_credito.moneda.nombre %>
+</p>
+<%= link_to :Editar, edit_forma_de_pago_al_credito_path(@forma_de_pago_al_credito), :class => :menuLink1N %> |
+<%= link_to :Regresar, forma_de_pago_al_creditos_path, :class => :menuLink1N %> |
+<%= link_to "Crear nueva forma de pago al credito", new_forma_de_pago_al_credito_path, :class => :menuLink1N %>

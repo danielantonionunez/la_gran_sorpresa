@@ -1,0 +1,28 @@
+<table class="grid">
+  <tr Class="gridheader">
+    <th>Nombre de usuario</th>
+    <th>Nombres</th>
+    <th>Apellido paterno</th>
+    <th>Apellido materno</th>
+    <th>Activo</th>
+    <th>Empresa</th>
+    <th>Roles</th>
+    <th colspan=3></th>
+  </tr>
+<% x=0; @usuarios.each do |usuario| ; c = ((x+=1)%2)==0 ? :gridrow : :gridalternatingrow %>
+  <tr class=<%=c%>>
+    <td><%= usuario.nombreusuario %></td>
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.apellidopaterno %></td>
+    <td><%= usuario.apellidomaterno %></td>
+    <td><%= t usuario.activo.to_s %></td>
+    <td><%= usuario.empresa.nombre %></td>
+    <td><%= usuario.rols.collect(&:nombre).join", " %></td>
+    <td><%= link_to :Detalles, usuario, :class => :menuLink1N %></td>
+    <td><%= link_to :Editar, edit_usuario_path(usuario), :class => :menuLink1N %></td>
+    <td><%= link_to :Eliminar, usuario, confirm: "\u00bfEsta seguro?", method: :delete, :class => :menuLink1N %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Crear nuevo usuario', new_usuario_path, :class => :menuLink1N %>

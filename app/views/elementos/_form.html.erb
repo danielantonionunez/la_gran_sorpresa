@@ -1,0 +1,31 @@
+<%= form_for(@elemento) do |f| %>
+  <% if @elemento.errors.any? %>
+    <div id="error_explanation">
+      <h2>No se puede grabar porque no ha pasado la validacion <%= pluralize(@elemento.errors.count, "dato") %>:</h2>
+      <ul>
+      <% @elemento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :nombre, :class => :menuNormal1N %><br />
+    <%= f.text_field :nombre, :class => :NormalCajaTexto %>
+  </div>
+  <div class="field">
+    <%= f.label :controlador, :class => :menuNormal1N %><br />
+    <%= f.text_field :controlador, :class => :NormalCajaTexto %>
+  </div>
+  <div class="field">
+    <%= f.label :seccion_id, :class => :menuNormal1N %><br />
+    <%= f.grouped_collection_select :seccion_id, @empresa, :seccions, :nombre, :id, :nombre, {:include_blank => "Seleccione valor"}, {:class => :NormalSelect} %>
+  </div>
+  <div class="field">
+    <%= f.label :rol, :class => :menuNormal1N %><br />   
+    <%= f.collection_select(:rol_ids, @rol, :id, :nombre, {:selected => @elemento.rol_ids},{:include_blank => "seleccione valor", :multiple => true, :class => :NormalSelect})%>   
+  </div>
+  <div class="actions">
+    <%= f.submit :class => :NormalBoton %>
+  </div>
+<% end %>

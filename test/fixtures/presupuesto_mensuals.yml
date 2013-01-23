@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo_de_presupuesto: 
+  periodo: 2012-09-29
+  moneda: 
+
+two:
+  tipo_de_presupuesto: 
+  periodo: 2012-09-29
+  moneda: 

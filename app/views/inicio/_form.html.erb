@@ -1,0 +1,9 @@
+<%= form_for([@usuario]) do |f| %>
+  <div class="field">
+    <%= f.label :clave, :class => :menuNormal1N %><br />
+    <%= f.password_field :clave, :class => :NormalCajaTexto %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Cambiar clave", :class => :NormalBoton %>
+  </div>
+<% end %>

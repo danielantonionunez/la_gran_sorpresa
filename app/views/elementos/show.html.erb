@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<p class="menuNormal1N">
+  <b>Nombre:</b>
+  <%= @elemento.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Controlador:</b>
+  <%= @elemento.controlador %>
+</p>
+<p class="menuNormal1N">
+  <b>Seccion:</b>
+  <%= @elemento.seccion.nombre %>
+</p>
+<p class="menuNormal1N">
+  <b>Roles:</b>
+  <%= @elemento.rols.collect(&:nombre).join", " %>
+</p>
+<p class="menuNormal1N">
+  <b>Empresa:</b>
+  <%= @elemento.seccion.empresa.nombre %>
+</p>
+<%= link_to :Editar, edit_elemento_path(@elemento), :class => :menuLink1N %> |
+<%= link_to :Regresar, elementos_path, :class => :menuLink1N %> |
+<%= link_to 'Crear nuevo elemento', new_elemento_path, :class => :menuLink1N %>
