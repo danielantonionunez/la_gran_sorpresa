@@ -1,88 +1,28 @@
-# IBM Dataservers
+# SQLite version 3.x
+#   gem install sqlite3
 #
-# Home Page
-#   http://rubyforge.org/projects/rubyibm/
-#
-# To install the ibm_db gem:
-#
-#   On Linux:
-#       . /home/db2inst1/sqllib/db2profile
-#       export IBM_DB_INCLUDE=/opt/ibm/db2/V9.7/include
-#       export IBM_DB_LIB=/opt/ibm/db2/V9.7/lib32
-#       gem install ibm_db
-#
-#   On Mac OS X 10.5:
-#       . /home/db2inst1/sqllib/db2profile
-#       export IBM_DB_INCLUDE=/opt/ibm/db2/V9.7/include
-#       export IBM_DB_LIB=/opt/ibm/db2/V9.7/lib32
-#       export ARCHFLAGS="-arch i386"
-#       gem install ibm_db
-#
-#   On Mac OS X 10.6:
-#       . /home/db2inst1/sqllib/db2profile
-#       export IBM_DB_INCLUDE=/opt/ibm/db2/V9.7/include
-#       export IBM_DB_LIB=/opt/ibm/db2/V9.7/lib64
-#       export ARCHFLAGS="-arch x86_64"
-#       gem install ibm_db
-#
-#   On Windows:
-#       Issue the command: gem install ibm_db
-#
-# Configure Using Gemfile
-# gem 'ibm_db'
-#
-# For more details on the installation and the connection parameters below,
-# please refer to the latest documents at http://rubyforge.org/docman/?group_id=2361
-
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
 development:
-  adapter: ibm_db
-  username: db2admin
-  password: 123
-  database: pru2_dev
-  #schema: db2inst1
-  #host: localhost
-  #port: 50000
-  #account: my_account
-  #app_user: my_app_user
-  #application: my_application
-  #workstation: my_workstation
-  #security: SSL
-  #timeout: 10
-  #authentication: SERVER
-  #parameterized: false
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test: &test
-  adapter: ibm_db
-  username: db2admin
-  password: 123
-  database: prue_tst
-  #schema: db2inst1
-  #host: localhost
-  #port: 50000
-  #account: my_account
-  #app_user: my_app_user
-  #application: my_application
-  #workstation: my_workstation
-  #security: SSL
-  #timeout: 10
-  #authentication: SERVER
-  #parameterized: false
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 
 production:
-  adapter: ibm_db
-  username: db2admin
-  password: 123
-  database: pru3_dev
-  #schema: db2inst1
-  #host: localhost
-  #port: 50000
-  #account: my_account
-  #app_user: my_app_user
-  #application: my_application
-  #workstation: my_workstation
-  #security: SSL
-  #timeout: 10
-  #authentication: SERVER
-  #parameterized: false
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+
 cucumber:
   <<: *test
