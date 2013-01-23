@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121110225921) do
+ActiveRecord::Schema.define(:version => 20130123203632) do
 
   create_table "egreso_presupuesto_mensuals", :force => true do |t|
     t.integer  "item_id"
