@@ -11,7 +11,7 @@
     <td><%= l presupuesto_mensual.periodo, :format => :short %></td>
     <td><%= presupuesto_mensual.moneda.nombre %></td>
     <td><%= link_to :Ejecucion, ejecucion_presupuesto_mensual_path(presupuesto_mensual), :class => :menuLink1N %></td>
-    <td><%= link_to :Detalles, presupuesto_mensual, :class => :menuLink1N %></td>
+    <td><%= link_to :Presupuestar, presupuesto_mensual, :class => :menuLink1N %></td>
     <td><%= link_to :Editar, edit_presupuesto_mensual_path(presupuesto_mensual), :class => :menuLink1N %></td>
     <td><%= link_to :Eliminar, presupuesto_mensual, confirm: "\u00bfEsta seguro?", method: :delete, :class => :menuLink1N %></td>
   </tr>
