@@ -16,7 +16,7 @@
 <% end %>
   <tr Class="gridheader">
     <th>Total:</th>
-    <th><%= @presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f.round 2 %></th>
+    <th><%= @presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f.round(2) if @presupuesto_mensual.ingreso_presupuesto_mensuals.exists? %></th>
     <th></th>
   </tr>
 </table>

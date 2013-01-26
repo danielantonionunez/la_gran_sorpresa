@@ -13,7 +13,8 @@
 </p>
 <p class="menuNormal1N">
   <b>Saldo:</b>
-  <%= (@presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f - @presupuesto_mensual.egreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f).round 2 %>
+  <%= (@presupuesto_mensual.ingreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f - @presupuesto_mensual.egreso_presupuesto_mensuals.collect(&:precio).reduce(:+).to_f).round(2) if 
+  @presupuesto_mensual.ingreso_presupuesto_mensuals.exists? || @presupuesto_mensual.egreso_presupuesto_mensuals.exists?%>
 </p>
 <table class="grid"><tr><td style="vertical-align:top;">
 <%= render 'ingreso_presupuesto_mensuals/ingreso_presupuesto_mensual' %>
