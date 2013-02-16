@@ -45,7 +45,9 @@ before_filter :authenticate
   # POST /elementos.json
   def create
     @elemento = Elemento.new(params[:elemento])
-
+    @rol = Rol.all
+    @empresa=Empresa.joins(:seccions).select("distinct empresas.id, empresas.nombre")
+    
     respond_to do |format|
       if @elemento.save
         format.html { redirect_to @elemento, notice: 'Elemento was successfully created.' }
@@ -61,7 +63,9 @@ before_filter :authenticate
   # PUT /elementos/1.json
   def update
     @elemento = Elemento.find(params[:id])
-
+    @rol = Rol.all
+    @empresa=Empresa.joins(:seccions).select("distinct empresas.id, empresas.nombre")
+    
     respond_to do |format|
       if @elemento.update_attributes(params[:elemento])
         format.html { redirect_to @elemento, notice: 'Elemento was successfully updated.' }

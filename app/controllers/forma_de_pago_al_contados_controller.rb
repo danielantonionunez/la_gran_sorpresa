@@ -47,7 +47,10 @@ before_filter :autenticacion
   # POST /forma_de_pago_al_contados.json
   def create
     @forma_de_pago_al_contado = FormaDePagoAlContado.new(params[:forma_de_pago_al_contado])
-
+    @tipo_de_forma_de_pago = TipoDeFormaDePago.all 
+    @financiador = Financiador.all 
+    @moneda = Moneda.all
+    
     respond_to do |format|
       if @forma_de_pago_al_contado.save
         format.html { redirect_to @forma_de_pago_al_contado, notice: 'Forma de pago al contado was successfully created.' }
@@ -63,7 +66,10 @@ before_filter :autenticacion
   # PUT /forma_de_pago_al_contados/1.json
   def update
     @forma_de_pago_al_contado = FormaDePagoAlContado.find(params[:id])
-
+    @tipo_de_forma_de_pago = TipoDeFormaDePago.all 
+    @financiador = Financiador.all 
+    @moneda = Moneda.all
+    
     respond_to do |format|
       if @forma_de_pago_al_contado.update_attributes(params[:forma_de_pago_al_contado])
         format.html { redirect_to @forma_de_pago_al_contado, notice: 'Forma de pago al contado was successfully updated.' }

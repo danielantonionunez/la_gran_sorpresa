@@ -45,7 +45,9 @@ before_filter :autenticacion
   # POST /items.json
   def create
     @item = Item.new(params[:item])
-
+    @forma_de_pago_al_contado = FormaDePagoAlContado.all
+    @forma_de_pago_al_credito = FormaDePagoAlCredito.all
+    
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -61,7 +63,9 @@ before_filter :autenticacion
   # PUT /items/1.json
   def update
     @item = Item.find(params[:id])
-
+    @forma_de_pago_al_contado = FormaDePagoAlContado.all
+    @forma_de_pago_al_credito = FormaDePagoAlCredito.all
+    
     respond_to do |format|
       if @item.update_attributes(params[:item])
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }

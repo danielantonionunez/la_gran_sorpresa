@@ -47,7 +47,10 @@ before_filter :autenticacion
   # POST /forma_de_pago_al_creditos.json
   def create
     @forma_de_pago_al_credito = FormaDePagoAlCredito.new(params[:forma_de_pago_al_credito])
-
+    @tipo_de_forma_de_pago = TipoDeFormaDePago.all 
+    @financiador = Financiador.all 
+    @moneda = Moneda.all
+    
     respond_to do |format|
       if @forma_de_pago_al_credito.save
         format.html { redirect_to @forma_de_pago_al_credito, notice: 'Forma de pago al credito was successfully created.' }
@@ -63,7 +66,10 @@ before_filter :autenticacion
   # PUT /forma_de_pago_al_creditos/1.json
   def update
     @forma_de_pago_al_credito = FormaDePagoAlCredito.find(params[:id])
-
+    @tipo_de_forma_de_pago = TipoDeFormaDePago.all 
+    @financiador = Financiador.all 
+    @moneda = Moneda.all
+    
     respond_to do |format|
       if @forma_de_pago_al_credito.update_attributes(params[:forma_de_pago_al_credito])
         format.html { redirect_to @forma_de_pago_al_credito, notice: 'Forma de pago al credito was successfully updated.' }

@@ -45,7 +45,9 @@ before_filter :authenticate
   # POST /usuarios.json
   def create
     @usuario = Usuario.new(params[:usuario])
-
+    @empresa = Empresa.all
+    @rol = Rol.all
+    
     respond_to do |format|
       if @usuario.save
         format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
@@ -61,7 +63,9 @@ before_filter :authenticate
   # PUT /usuarios/1.json
   def update
     @usuario = Usuario.find(params[:id])
-
+    @empresa = Empresa.all
+    @rol = Rol.all
+    
     respond_to do |format|
       if @usuario.update_attributes(params[:usuario])
         format.html { redirect_to @usuario, notice: 'Usuario was successfully updated.' }

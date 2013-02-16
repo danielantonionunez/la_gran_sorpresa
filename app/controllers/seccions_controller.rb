@@ -43,7 +43,8 @@ before_filter :authenticate
   # POST /seccions.json
   def create
     @seccion = Seccion.new(params[:seccion])
-
+    @empresa = Empresa.all
+    
     respond_to do |format|
       if @seccion.save
         format.html { redirect_to @seccion, notice: 'Seccion was successfully created.' }
@@ -59,7 +60,8 @@ before_filter :authenticate
   # PUT /seccions/1.json
   def update
     @seccion = Seccion.find(params[:id])
-
+    @empresa = Empresa.all
+    
     respond_to do |format|
       if @seccion.update_attributes(params[:seccion])
         format.html { redirect_to @seccion, notice: 'Seccion was successfully updated.' }

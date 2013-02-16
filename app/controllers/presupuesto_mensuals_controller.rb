@@ -55,7 +55,9 @@ before_filter :autenticacion
   # POST /empresas.json
   def create
     @presupuesto_mensual = PresupuestoMensual.new(params[:presupuesto_mensual])
-
+    @tipo_de_presupuestos = TipoDePresupuesto.all 
+    @monedas = Moneda.all
+    
     respond_to do |format|
       if @presupuesto_mensual.save
         format.html { redirect_to @presupuesto_mensual, notice: 'Presupuesto mensual was successfully created.' }
@@ -71,7 +73,9 @@ before_filter :autenticacion
   # PUT /empresas/1.json
   def update
     @presupuesto_mensual = PresupuestoMensual.find(params[:id])
-
+    @tipo_de_presupuestos = TipoDePresupuesto.all 
+    @monedas = Moneda.all
+    
     respond_to do |format|
       if @presupuesto_mensual.update_attributes(params[:empresa])
         format.html { redirect_to @presupuesto_mensual, notice: 'Presupuesto mensual was successfully updated.' }
