@@ -22,6 +22,16 @@ es:
       empresa: "empresa"
       rol: "rol"
       seccion: "sección"
+      financiador: "financiador"
+      moneda: "moneda"
+      tipo_de_forma_de_pago: "tipo de forma de pago"
+      forma_de_pago_al_contado: "forma de pago al contado"
+      forma_de_pago_al_credito: "forma de pago al crédito"
+      tipo_de_presupuesto: "tipo de presupuesto"
+      item: "ítem"
+      presupuesto_mensual: "presupuesto mensual"
+      ingreso_presupuesto_mensual: "ingreso de presupuesto mensual"
+      egreso_presupuesto_mensual: "egreso de presupuesto mensual"
     attributes:
       elemento:
         nombre: "Nombre del elemento"
@@ -41,6 +51,35 @@ es:
       seccion:
         nombre: "Nombre de la sección"
         empresa_id: "Empresa a la que pertenece la sección"
+      financiador:
+        nombre: "Nombre del financiador"
+      moneda:
+        nombre: "Nombre de la moneda"
+        simbolo: "Símbolo que identifica la moneda"
+      tipo_de_forma_de_pago:
+        nombre: "Nombre del tipo de forma de pago"
+      forma_de_pago_al_contado:
+        nombre: "Nombre de la forma de pago al contado"
+        tipo_de_forma_de_pago_id: "Tipo de forma de pago al contado"
+        financiador_id: "Financiador de forma de pago al contado"
+        moneda_id: "Moneda de forma de pago al contado"
+      forma_de_pago_al_credito:
+        nombre: "Nombre de la forma de pago al crédito"
+        tipo_de_forma_de_pago_id: "Tipo de forma de pago al crédito"
+        financiador_id: "Financiador de forma de pago al crédito"
+        moneda_id: "Moneda de forma de pago al crédito"
+      tipo_de_presupuesto:
+        nombre: "Nombre del tipo de presupuesto"
+      item:
+        nombre: "Nombre del ítem"
+        forma_de_pago_al_contado_ids: "Formas de pago al contado"
+        forma_de_pago_al_credito_ids: "Formas de pago al crédito"
+      presupuesto_mensual:
+        tipo_de_presupuesto_id: "Tipo de presupuesto mensual"
+        periodo: "Periodo del presupuesto mensual"
+        moneda_id: "Moneda del presupuesto mensual"
+      ingreso_presupuesto_mensual:
+        item_id: "Ítem de ingreso a presupuestar"
     errors:
       models:
         elemento:
@@ -83,3 +122,56 @@ es:
               taken: "ya existe en la empresa seleccionada, escriba otro."
             empresa_id:
               blank: "debe tener seleccionado un valor."
+        financiador:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+              taken: "ya existe, ingrese otro nombre de financiador."
+        moneda:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+              taken: "ya existe, ingrese otro nombre de moneda."
+            simbolo:
+              blank: "no puede estar en blanco."
+        tipo_de_forma_de_pago:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+              taken: "ya existe, ingrese otro nombre."
+        forma_de_pago_al_contado:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+            tipo_de_forma_de_pago_id:
+              blank: "debe tener seleccionado un tipo de forma de pago."
+            financiador_id:
+              blank: "debe tener seleccionado un financiador."
+            moneda_id:
+              blank: "debe tener seleccionado una moneda."
+        forma_de_pago_al_credito:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+            tipo_de_forma_de_pago_id:
+              blank: "debe tener seleccionado un tipo de forma de pago."
+            financiador_id:
+              blank: "debe tener seleccionado un financiador."
+            moneda_id:
+              blank: "debe tener seleccionado una moneda."
+        tipo_de_presupuesto:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+              taken: "ya existe, ingrese otro nombre de tipo de presupuesto."
+        item:
+          attributes:
+            nombre:
+              blank: "no puede estar en blanco."
+              taken: "ya existe, escriba otro."
+        presupuesto_mensual:
+          attributes:
+            tipo_de_presupuesto_id:
+              blank: "debe tener seleccionado un tipo de presupuesto mensual."
+            moneda_id:
+              blank: "debe tener seleccionado una moneda para el presupuesto mensual."
