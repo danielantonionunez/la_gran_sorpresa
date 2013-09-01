@@ -1,0 +1,6 @@
+danielantonionunez@gmail.com
+Autor: Daniel Antonio Nuñez Carhuayo
+
+h1. La gran sorpresa
+
+Este es un software libre creado para crear presupuestos
