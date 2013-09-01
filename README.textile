@@ -4,3 +4,5 @@ Autor: Daniel Antonio Nuñez Carhuayo
 h1. La gran sorpresa
 
 Este es un software libre creado para crear presupuestos
+
+!https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif!
